@@ -1,16 +1,8 @@
 const API_KEY = '6b20d087a8cf389999ea092c60228072';
 const COORDS = 'coords';
 
-function getWeather(lat,lng){
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`)
-    .then(function(response){
-      return response.json();
-    }).then(function(json){
-      const temperature=json.main.temp;
-      const place=json.name;
-      weather.innerText=`${temperature} @ ${place}`;
-    });
-  }
+function getWeather(lat,lon){
+    fetch(`https://api.openweathermap.org/data/2.5/find?lat={lat}&lon={lon}&cnt={cnt}&appid={API_KEY}`)
   
   function saveCoords(coordsObj){
     localStorage.setItem(COORDS,JSON.stringify(coordsObj));
