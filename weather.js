@@ -34,7 +34,8 @@ function loadCoords(){
     if(loadedCords === null){
         askForCoords();
     }else{
-        //getweather
+        const parseCoords = JSON.parse(loadedCords);
+        console.log(parseCoords);
     }
 }
 
