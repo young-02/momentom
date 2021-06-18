@@ -3,7 +3,9 @@ const COORDS = 'coords';
 
 function getWeather(lat,lon){
     fetch(`https://api.openweathermap.org/data/2.5/find?lat={lat}&lon={lon}&cnt={cnt}&appid={API_KEY}`)
-  
+}
+
+
   function saveCoords(coordsObj){
     localStorage.setItem(COORDS,JSON.stringify(coordsObj));
   }
