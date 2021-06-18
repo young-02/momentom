@@ -5,7 +5,9 @@ function getWeather(lat,lon){
     fetch(
         `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
         ).then(function(response){
-            console.log(response.json())
+           return response.json();
+        }).then (function(json){
+            console.log(json)
         })
 }
 
@@ -18,7 +20,7 @@ function getWeather(lat,lon){
     const latitude = position.coords.latitude,
       longitude=position.coords.longitude;
     const coordsObject={
-      latitude,
+        latitude,
       longitude
       
     };
@@ -40,7 +42,7 @@ function getWeather(lat,lon){
     if (loadedcoords ===null){
       askForCoords();
     }else{
-      const parseCoords=JSON.parse(loadedcoords);
+      const parseCoords = JSON.parse(loadedcoords);
       console.log(parseCoords);
       getWeather(parseCoords.latitude,parseCoords.longitude);
     }
