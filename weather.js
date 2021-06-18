@@ -5,7 +5,7 @@ function getWeather(lat,lon){
     fetch(
         `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
         ).then(function(response){
-            console.log(response)
+            console.log(response.json())
         })
 }
 
