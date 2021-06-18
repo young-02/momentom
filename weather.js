@@ -10,14 +10,14 @@ function saveCoords (coordsObj){
 }
 
 function handleGeoSucess(position){
-   const latutude = position.coords.latutude;
+   const latitude = position.coords.latitude;
    const longitude = position.coords.longitude;
    const coordsObj = {
-        latutude ,
+          latitude ,
         longitude
    };
    saveCoords(coordsObj);
-   getweather(latutude, longitude);
+   getweather(latitude, longitude);
 }
 
 function handleGeoError(){
