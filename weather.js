@@ -30,11 +30,11 @@ function askForCoords(){
 
 
 function loadCoords(){
-    const loadedCords = localStorage.getItem(COORDS);
-    if(loadedCords === null){
+    const loadedCoords = localStorage.getItem(COORDS);
+    if(loadedCoords === null){
         askForCoords();
     }else{
-        const parseCoords = JSON.parse(loadedCords);
+        const parseCoords = JSON.parse(loadedCoords);
         console.log(parseCoords);
     }
 }
