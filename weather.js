@@ -38,6 +38,7 @@ function getWeather(lat,lon){
     }else{
       const parseCoords=JSON.parse(loadedcoords);
       console.log(parseCoords);
+      console.log(latitude)
       getWeather(parseCoords.latitude,parseCoords.longitude);
     }
   
