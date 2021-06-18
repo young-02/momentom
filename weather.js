@@ -4,14 +4,18 @@ const weather = document.querySelector('.js-weather');
 const API_KEY = '6b20d087a8cf389999ea092c60228072';
 const COORDS = "coords";
 
-getWeather = (lat,lon) =>{
-    console.log(lat + lon);
-    fetch('http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&APPID='+API_KEY)
-    .then(response => response.json())
-    .then(json => {
-      console.log(json)
+function getWeather(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+    .then(function (reponse) {
+      return reponse.json();
     })
-  }
+    .then(function (json) {
+      console.log(json);
+      const temperature = json.main.temp;
+      const place = json.name;
+      weather.innerText = `🌡${temperature} 📍 ${place}`;
+    });
+}
 
 function saveCoord(coordsObj) {
   localStorage.setItem(COORDS, JSON.stringify(coordsObj));
