@@ -13,7 +13,7 @@ function handleGeoSucess(position){
    const latitude = position.coords.latitude;
    const longitude = position.coords.longitude;
    const coordsObj = {
-          latitude ,
+        latitude ,
         longitude
    };
    saveCoords(coordsObj);
