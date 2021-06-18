@@ -6,10 +6,10 @@ function saveCoords (coordsObj){
 }
 
 function handleGeoSucess(position){
-   const latutude = position.coords.latitude;
+   const latutude = position.coords.latutude;
    const longitude = position.coords.longitude;
    const coordsObj = {
-       latitude : latitude,
+        latutude : latutude,
        longitude : longitude,
    };
    saveCoords(coordsObj)
